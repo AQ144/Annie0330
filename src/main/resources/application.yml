@@ -1,0 +1,69 @@
+# annie
+an.xq:
+    cdn:
+        bootstrapcss: script/lib/bootstrap/dist/css/bootstrap.min.css
+        requirejs: script/lib/requirejs/require.min.js
+        jquery: script/lib/jquery/dist/jquery.min
+        bootstrapjs: script/lib/bootstrap/dist/js/bootstrap.min
+        angularjs: script/lib/angular/angular.min
+        angularRoute: script/lib/angular-route/angular-route.min
+        angularResource: script/lib/angular-resource/angular-resource.min
+        chai: script/lib/chai/chai.min
+        md5: script/lib/js-md5/js/md5.min
+        baidumap: http://api.map.baidu.com/api?v=2.0&ak=p9uayedWDFw0TLz8VASOa8LT
+        baidu: http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min
+    shutdown: disable
+    testdata: disable
+    sftp:
+             host: 121.40.157.200
+             username: RentalBA
+             password:
+             port: 22
+             path:
+                logo: /home/RentalBA/upload/logo
+                model: /home/RentalBA/upload/model
+                license: /home/RentalBA/upload/license
+# the key to use baidu weather service
+an.xq.web.baiduKey:
+# the key to use baidu map service
+an.xq.web.baiduMapKey:
+# Tomcat
+server.port: 1202
+
+# Logging level (TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF)
+logging:
+    level:
+        org.hibernate: WARN
+        org.springframework: WARN
+    file: annie0330.log
+
+# spring
+spring:
+    profiles.active: annie
+    freemarker.cache: true
+    resources.cache-period: 0
+    datasource:
+     # see more properties at http://www.mchange.com/projects/c3p0/#configuration_properties
+        type: com.mchange.v2.c3p0.ComboPooledDataSource
+        url: jdbc:mysql://127.0.0.1:3306/annie?characterEncoding=utf8
+        user: annie
+        password: 123456
+        min-idle: 8
+        checkoutTimeout: 30000
+        idleConnectionTestPeriod: 30
+        initialPoolSize: 10
+        maxIdleTime: 30
+        maxPoolSize: 100
+        minPoolSize: 10
+        maxStatements: 200
+    jpa:
+        show-sql: false
+        hibernate:
+            # Hibernate DDL  auto: create, create-drop, update, validate
+            ddl-auto: validate
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+            properties:
+                hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    redis:
+        host: 127.0.0.1
+        database: 1
