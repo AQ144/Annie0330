@@ -15,14 +15,14 @@ an.xq:
     shutdown: disable
     testdata: disable
     sftp:
-             host: 121.40.157.200
-             username: RentalBA
+             host: 127.0.0.1
+             username: annie
              password:
              port: 22
              path:
-                logo: /home/RentalBA/upload/logo
-                model: /home/RentalBA/upload/model
-                license: /home/RentalBA/upload/license
+                logo: /temp/upload/logo
+                model: /temp/upload/model
+                license: /temp/upload/license
 # the key to use baidu weather service
 an.xq.web.baiduKey:
 # the key to use baidu map service
